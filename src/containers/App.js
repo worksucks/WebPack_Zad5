@@ -4,6 +4,9 @@ import {hot} from 'react-hot-loader';
 import style from './App.css';
 import Title from '../components/Title.js';
 import TodoList from '../components/TodoList.js'
+import TodoForm from '../components/TodoForm.js'
+import Todo from '../components/Todo.js'
+import uuid from 'uuid';
 //import TodoList from './components/TodoList.js';
 
 class App extends React.Component {
@@ -42,6 +45,8 @@ class App extends React.Component {
               Tutaj pojawią się komponenty naszej aplikacji.
               <Title data={this.state.data.length}/>
               <TodoList FuncDelete={this.removeTodo.bind(this)} zmienna={this.state.data}/>
+              <Todo/>
+              <TodoForm FuncAdd={this.addTodo.bind(this)}/>
           </div>
       );
     }
